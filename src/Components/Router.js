@@ -5,16 +5,20 @@ import { BrowserRouter as Router,
   Switch
  } from "react-router-dom";
 import Home from "Routes/Home";
+import Header from "Components/Header";
 import TV from "Routes/TV";
 import Search from "Routes/Search";
 
 export default () => (
   <Router>
-    <Switch>
-    <Route path="/" exact component={Home} />
-    <Route path="/tv" component={TV} />
-    <Route path="/search" component={Search} />
-    <Redirect from="*" to="/"></Redirect>
-    </Switch>
+    <>
+      <Header />
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/tv" component={TV} />
+        <Route path="/search" component={Search} />
+        <Redirect from="*" to="/"></Redirect>
+      </Switch>
+    </>
   </Router>
 )
